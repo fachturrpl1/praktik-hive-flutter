@@ -5,10 +5,11 @@ void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
 
+  //menginisialisasi variabel box yang isinya adalah membuka hive bernama myBox
   var box = await Hive.openBox('myBox');
-
+  //dalam variabel box mengisikan key nama dengan value fachtur
   await box.put('name','Fachtur');
-
+  //menginisialisasi variabel name yang isinya adalah mendapatkan value dari key milik box(mybox)
   var name = box.get('name');
 
   print('Name : $name');
